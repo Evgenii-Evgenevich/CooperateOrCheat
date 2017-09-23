@@ -1,14 +1,13 @@
 /**
- * Created by EE on 23.09.2017.
+ * Created by EE on 24.09.2017.
  */
 
-
-public class CooperaterAgent implements Agent {
+public class CooperatorAgent implements Agent {
 
     private int iNumCoins = 0;
 
-    public CooperaterAgent() {
-        iNumCoins = 0;
+    public CooperatorAgent(int iNumCoins) {
+        this.iNumCoins = iNumCoins;
     }
 
     public boolean step(Agent opponent) {
@@ -28,4 +27,3 @@ public class CooperaterAgent implements Agent {
         return iNumCoins;
     }
 }
-

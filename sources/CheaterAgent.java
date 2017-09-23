@@ -7,8 +7,8 @@ public class CheaterAgent implements Agent {
 
     private int iNumCoins = 0;
 
-    public CheaterAgent() {
-        iNumCoins = 0;
+    public CheaterAgent(int iNumCoins) {
+        this.iNumCoins = iNumCoins;
     }
 
     public boolean step(Agent opponent) {

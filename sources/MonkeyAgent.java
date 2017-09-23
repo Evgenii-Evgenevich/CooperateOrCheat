@@ -10,9 +10,9 @@ public class MonkeyAgent implements Agent {
 
     private int iNumCoins = 0;
 
-    public MonkeyAgent() {
-        random = new Random();
-        iNumCoins = 0;
+    public MonkeyAgent(int iNumCoins) {
+        this.random = new Random();
+        this.iNumCoins = iNumCoins;
     }
 
     public boolean step(Agent opponent) {

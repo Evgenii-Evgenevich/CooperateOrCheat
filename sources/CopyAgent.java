@@ -10,8 +10,8 @@ public class CopyAgent implements Agent {
 
     private int iNumCoins = 0;
 
-    public CopyAgent() {
-        iNumCoins = 0;
+    public CopyAgent(int iNumCoins) {
+        this.iNumCoins = iNumCoins;
     }
 
     public boolean step(Agent opponent) {
