@@ -9,7 +9,7 @@ public class OneGame {
 
     public Collection<Agent> agents;
 
-    public OneGame(int iNumCheaters, int iNumCooperators, int iNumMonkeys, int iNumCopyAgents, int iNumCoins) {
+    public OneGame(int iNumCheaters, int iNumCooperators, int iNumMonkeys, int iNumCopyists, int iNumCoins) {
 
         for (int i = 0; i < iNumCheaters; ++i) {
             agents.add(new CheaterAgent(iNumCoins));
@@ -23,8 +23,8 @@ public class OneGame {
             agents.add(new MonkeyAgent(iNumCoins));
         }
 
-        for (int i = 0; i < iNumCopyAgents; ++i) {
-            agents.add(new CopyAgent(iNumCoins));
+        for (int i = 0; i < iNumCopyists; ++i) {
+            agents.add(new CopyistAgent(iNumCoins));
         }
     }
 
@@ -40,14 +40,14 @@ public class OneGame {
             rightAgent.endStep(leftAgent, leftRes);
 
             if (leftRes && rightRes) {
-                leftAgent.addCoins(1);
-                rightAgent.addCoins(1);
+                leftAgent.addCoins(2);
+                rightAgent.addCoins(2);
             } else if (leftRes && !rightRes) {
-                leftAgent.addCoins(-2);
+                leftAgent.addCoins(-1);
                 rightAgent.addCoins(3);
             } else if (!leftRes && rightRes) {
                 leftAgent.addCoins(3);
-                rightAgent.addCoins(-2);
+                rightAgent.addCoins(-1);
             } else if (!leftRes && !rightRes) {
                 leftAgent.addCoins(-1);
                 rightAgent.addCoins(-1);

@@ -6,25 +6,21 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import java.beans.*;
-
 import java.text.*;
 
 public class MyPanelTextField extends JPanel {
-
-    public Integer gettingValue = 0;
 
     private JLabel label = null;
 
     private JFormattedTextField field = null;
 
-    public MyPanelTextField(String labelText) {
+    public MyPanelTextField(String labelText, int startingValue) {
         super();
 
         label = new JLabel(labelText);
 
         field = new JFormattedTextField();
-        field.setValue(gettingValue);
+        field.setValue(new Integer(startingValue));
         field.setColumns(10);
         field.setFont(field.getFont().deriveFont(18f));
 
@@ -35,6 +31,7 @@ public class MyPanelTextField extends JPanel {
         this.add(field);
     }
 
-
-
+    public int getValue() {
+        return ((Integer)field.getValue()).intValue();
+    }
 }

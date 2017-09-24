@@ -1,16 +1,17 @@
 /**
- * Created by EE on 23.09.2017.
+ * Created by EE on 24.09.2017.
  */
 
 import java.util.Map;
 
-public class CopyAgent implements Agent {
+
+public class CopyistAgent implements Agent {
 
     Map<Agent, Boolean> lastSteps;
 
     private int iNumCoins = 0;
 
-    public CopyAgent(int iNumCoins) {
+    public CopyistAgent(int iNumCoins) {
         this.iNumCoins = iNumCoins;
     }
 
