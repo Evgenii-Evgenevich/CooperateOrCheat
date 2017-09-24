@@ -24,10 +24,10 @@ public class Application {
                 "Agents can interact with each other in the following scenario:\n" +
                 "   At the beginning of the game, each agent puts either zero or one coin on the stake.\n" +
                 "Opponents do not see how many coins each of them put. Then the following happens:\n" +
-                "   1. If both are put on a coin, then both get two.\n" +
-                "   2. If both do not put coins, then each is penalized for one coin.\n" +
-                "   3. If one of the players has put a coin and the other does not,\n" +
-                "      then the player who puts the coin is fined one,\n" +
+                "   1. If both put on a coin then both get two.\n" +
+                "   2. If both do not put coins then each is fined for one coin.\n" +
+                "   3. If one of the players put a coin and the other does not\n" +
+                "      then the player who puts the coin is fined one\n" +
                 "      and the player who does not put the coin gets three.");
 
         mainText.setFont(mainText.getFont().deriveFont(16f));
