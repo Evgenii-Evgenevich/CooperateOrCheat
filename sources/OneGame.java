@@ -79,7 +79,7 @@ public class OneGame {
 
     // at the end of a round
     // removes agents who have the negative number of coins
-    // returns the of remaining agents
+    // returns the number of remaining agents
     public int endRound() {
         for (Agent agent : agents) {
             if (agent.getCoins() < 0) {

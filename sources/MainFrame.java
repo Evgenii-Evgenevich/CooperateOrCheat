@@ -15,11 +15,14 @@ public class MainFrame extends JFrame {
         this.setBounds(100, 150, width, heigth);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        panel = new JPanel();
-        this.add(panel);
+        Container contentPane = this.getContentPane();
+
+        this.panel = new JPanel();
+
+        contentPane.add(panel);
     }
 
     public void addComponent(Component component) {
-        panel.add(component);
+        this.panel.add(component);
     }
 }

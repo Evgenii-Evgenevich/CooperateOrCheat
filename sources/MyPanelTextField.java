@@ -8,27 +8,35 @@ import javax.swing.*;
 
 import java.text.*;
 
-public class MyPanelTextField extends JPanel {
+public class MyPanelTextField extends JPanel implements ActionListener {
+    public int gettingValue = 0;
 
     private JLabel label = null;
 
     private JFormattedTextField field = null;
 
-    public MyPanelTextField(String labelText, int startingValue) {
+    public MyPanelTextField(String labelText, float fontSize, int startingValue) {
         super();
 
-        label = new JLabel(labelText);
+        this.gettingValue = startingValue;
 
-        field = new JFormattedTextField();
-        field.setValue(new Integer(startingValue));
-        field.setColumns(10);
-        field.setFont(field.getFont().deriveFont(18f));
+        this.label = new JLabel(labelText);
 
-        label.setLabelFor(field);
-        label.setFont(label.getFont().deriveFont(18f));
+        this.field = new JFormattedTextField();
+        this.field.setValue(new Integer(startingValue));
+        this.field.setColumns(10);
+        this. field.setFont(field.getFont().deriveFont(fontSize));
+        this.field.addActionListener(this);
+
+        this.label.setLabelFor(field);
+        this.label.setFont(label.getFont().deriveFont(fontSize));
 
         this.add(label);
         this.add(field);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        this.gettingValue = ((Integer)this.field.getValue()).intValue();
     }
 
     public int getValue() {

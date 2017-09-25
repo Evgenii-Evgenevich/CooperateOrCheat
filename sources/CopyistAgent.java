@@ -4,7 +4,7 @@
 
 import java.util.Map;
 
-
+// the imitation strategy:
 public class CopyistAgent implements Agent {
 
     Map<Agent, Boolean> lastSteps;
@@ -13,6 +13,10 @@ public class CopyistAgent implements Agent {
 
     public CopyistAgent(int iNumCoins) {
         this.iNumCoins = iNumCoins;
+    }
+
+    public String getStrategy() {
+        return "imitation";
     }
 
     public boolean step(Agent opponent) {
@@ -29,8 +33,8 @@ public class CopyistAgent implements Agent {
     }
 
     public void endStep(Agent opponent, boolean isCooperate) {
-        lastSteps.remove(opponent);
-        lastSteps.put(opponent, new Boolean(isCooperate));
+        this.lastSteps.remove(opponent);
+        this.lastSteps.put(opponent, new Boolean(isCooperate));
     }
 
     public void addCoins(int iNumCoins) {
@@ -38,7 +42,7 @@ public class CopyistAgent implements Agent {
     }
 
     public int getCoins() {
-        return iNumCoins;
+        return this.iNumCoins;
     }
 }
 

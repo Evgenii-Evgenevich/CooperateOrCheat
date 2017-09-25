@@ -4,6 +4,7 @@
 
 import java.util.Random;
 
+// the random strategy: randomly put coins
 public class MonkeyAgent implements Agent {
 
     private Random random = null;
@@ -15,14 +16,16 @@ public class MonkeyAgent implements Agent {
         this.iNumCoins = iNumCoins;
     }
 
+    public String getStrategy() {
+        return "random";
+    }
+
     public boolean step(Agent opponent) {
         // random
         return random.nextBoolean();
     }
 
-    public void endStep(Agent opponent, boolean isCooperate) {
-
-    }
+    public void endStep(Agent opponent, boolean isCooperate) {}
 
     public void addCoins(int iNumCoins) {
         this.iNumCoins += iNumCoins;
