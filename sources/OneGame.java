@@ -11,19 +11,19 @@ public class OneGame {
 
     public OneGame(int iNumCheaters, int iNumCooperators, int iNumMonkeys, int iNumCopyists, int iNumCoins) {
         for (int i = 0; i < iNumCheaters; ++i) {
-            agents.add(new CheaterAgent(iNumCoins));
+            this.agents.add(new CheaterAgent(iNumCoins));
         }
 
         for (int i = 0; i < iNumCooperators; ++i) {
-            agents.add(new CooperatorAgent(iNumCoins));
+            this.agents.add(new CooperatorAgent(iNumCoins));
         }
 
         for (int i = 0; i < iNumMonkeys; ++i) {
-            agents.add(new MonkeyAgent(iNumCoins));
+            this.agents.add(new MonkeyAgent(iNumCoins));
         }
 
         for (int i = 0; i < iNumCopyists; ++i) {
-            agents.add(new CopyistAgent(iNumCoins));
+            this.agents.add(new CopyistAgent(iNumCoins));
         }
     }
 
@@ -70,8 +70,8 @@ public class OneGame {
 
     // a round of the game in which everyone plays with each agent
     public void round() {
-        for (Agent agentI : agents) {
-            for (Agent agentJ : agents) {
+        for (Agent agentI : this.agents) {
+            for (Agent agentJ : this.agents) {
                 game(agentI, agentJ);
             }
         }
@@ -81,13 +81,13 @@ public class OneGame {
     // removes agents who have the negative number of coins
     // returns the number of remaining agents
     public int endRound() {
-        for (Agent agent : agents) {
+        for (Agent agent : this.agents) {
             if (agent.getCoins() < 0) {
-                agents.remove(agent);
+                this.agents.remove(agent);
             }
         }
 
-        return agents.size();
+        return this.agents.size();
     }
 }
 
