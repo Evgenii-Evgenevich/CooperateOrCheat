@@ -12,11 +12,12 @@ the game of cooperation
     The agents can be different strategies:
     The naive strategy: always put a coin on the stake hoping to get two if the opponent does the same
     The greedy strategy: never put coins hoping to get three if the opponent does the opposite
+    The random strategy: randomly put coins
         
     To take the rounds of the game in which each agent plays with each. At the end of a round the agents with a negative amount in the account die. If less than two agents, the game ends.
         
 
 
 I added the imitation strategy for the agents (CopyistAgent). 
-The imitation strategy: at the first step put coin on the stake and next copy the previous step of the opponent
+The imitation strategy: at the first step put coin on the stake and next copy the previous step of the opponent.
 I think the imitation strategy is a more optimal strategy than that proposed three.
