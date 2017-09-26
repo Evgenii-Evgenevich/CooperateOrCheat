@@ -3,11 +3,11 @@
  */
 
 
-import java.util.Collection;
+import java.util.*;
 
 public class OneGame {
 
-    public Collection<Agent> agents;
+    public List<Agent> agents;
 
     public OneGame(int iNumCheaters, int iNumCooperators, int iNumMonkeys, int iNumCopyists, int iNumCoins) {
         for (int i = 0; i < iNumCheaters; ++i) {
@@ -68,11 +68,11 @@ public class OneGame {
         }
     }
 
-    // a round of the game in which everyone plays with each agent
+    // a round of the game in which each agent plays with each
     public void round() {
-        for (Agent agentI : this.agents) {
-            for (Agent agentJ : this.agents) {
-                game(agentI, agentJ);
+        for (int i = 0; i < this.agents.size(); ++i) {
+            for (int j = i + 1; j < this.agents.size(); ++j) {
+                game(this.agents.get(i), this.agents.get(j));
             }
         }
     }

@@ -10,7 +10,7 @@ public class Application implements ActionListener {
 
     static private final String description = "\tThe system has N-agents. Each agent has a starting amount of money M coins. " +
             "Agents can interact with each other in the following scenario: \n" +
-            "\tAt the beginning of the game, each agent puts either zero or one coin on the stake. " +
+            "\tAt the beginning of the game, each agent puts zero or one coin on the stake. " +
             "Opponents do not see how many coins each of them put. Then the following happens: \n" +
             "\t1. If both put on a coin then both get two. \n" +
             "\t2. If both do not put coins then each is fined for one coin. \n" +
