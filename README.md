@@ -19,11 +19,27 @@ To take the rounds of the game in which each agent plays with each. At the end o
 
 ---
 
+Realization: \
+CooperatorAgent is an agent that plays the naive strategy (always cooperates) \
+CheaterAgent is an agent that plays the greedy strategy (always cheats) \
+MonkeyAgent is an agent that play the random strategy (stupid monkey) \
+CopyistAgent is an agent that play the imitation strategy (new) \
+OneGame is a game is played by the agents 
+
+---
+
 I added the imitation strategy for the agents (CopyistAgent). \
 The imitation strategy: at the first step put coin on the stake and next copy the previous step of the opponent. \
 I think the imitation strategy is a more optimal strategy than that proposed three.
 
+The random strategy is the most nonoptimal strategy. \
+The naive strategy is a good strategy if you are not alone. \
+The greedy strategy only win the first rounds. 
+
+The Cooperator Agents and/or the Copyist Agents may play this game endlessly even if there are the few Cheater Agents.
+
 ---
+
 
 
 
