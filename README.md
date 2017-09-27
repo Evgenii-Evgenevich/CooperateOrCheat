@@ -34,7 +34,7 @@ I think the imitation strategy is a more optimal strategy than that proposed thr
 
 The random strategy is the most nonoptimal strategy. \
 The naive strategy is a good strategy if you are not alone. \
-The greedy strategy only win the first rounds. 
+The greedy strategy only wins the first rounds. 
 
 The Cooperator Agents and/or the Copyist Agents may play this game endlessly even if there are the few Cheater Agents.
 
