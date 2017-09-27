@@ -2,14 +2,16 @@
  * Created by EE on 23.09.2017.
  */
 
-
 import java.util.*;
 
 public class OneGame {
 
-    public List<Agent> agents;
+    public List<Agent> agents = null;
 
+    // ??????
     public OneGame(int iNumCheaters, int iNumCooperators, int iNumMonkeys, int iNumCopyists, int iNumCoins) {
+        agents = new ArrayList<Agent>();
+
         for (int i = 0; i < iNumCheaters; ++i) {
             this.agents.add(new CheaterAgent(iNumCoins));
         }
@@ -27,7 +29,7 @@ public class OneGame {
         }
     }
 
-    public void game(Agent leftAgent, Agent rightAgent) {
+    public static void game(Agent leftAgent, Agent rightAgent) {
         if (leftAgent != rightAgent && leftAgent != null && rightAgent != null) {
             // the step of the left agent
             boolean leftRes = leftAgent.step(rightAgent);
@@ -72,7 +74,7 @@ public class OneGame {
     public void round() {
         for (int i = 0; i < this.agents.size(); ++i) {
             for (int j = i + 1; j < this.agents.size(); ++j) {
-                game(this.agents.get(i), this.agents.get(j));
+                OneGame.game(this.agents.get(i), this.agents.get(j));
             }
         }
     }

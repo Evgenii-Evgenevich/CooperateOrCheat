@@ -4,7 +4,7 @@
 
 import java.util.Map;
 
-// the imitation strategy:
+// the imitation strategy: at the first step put coin on the stake and next copy the previous step of the opponent
 public class CopyistAgent implements Agent {
 
     Map<Agent, Boolean> lastSteps;

@@ -2,44 +2,30 @@
  * Created by EE on 23.09.2017.
  */
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
-import java.text.*;
-
-public class MyPanelTextField extends JPanel implements ActionListener {
-    public int gettingValue = 0;
-
-    private JLabel label = null;
-
+public class MyPanelTextField extends JPanel {
     private JFormattedTextField field = null;
 
     public MyPanelTextField(String labelText, float fontSize, int startingValue) {
         super();
 
-        this.gettingValue = startingValue;
-
-        this.label = new JLabel(labelText);
+        JLabel label = new JLabel(labelText);
+        label.setFont(label.getFont().deriveFont(fontSize));
 
         this.field = new JFormattedTextField();
+        this.field.setFont(this.field.getFont().deriveFont(fontSize));
         this.field.setValue(new Integer(startingValue));
         this.field.setColumns(10);
-        this. field.setFont(field.getFont().deriveFont(fontSize));
-        this.field.addActionListener(this);
 
-        this.label.setLabelFor(field);
-        this.label.setFont(label.getFont().deriveFont(fontSize));
+        label.setLabelFor(this.field);
 
         this.add(label);
-        this.add(field);
+        this.add(this.field);
     }
 
-    public void actionPerformed(ActionEvent e) {
-        this.gettingValue = ((Integer)this.field.getValue()).intValue();
-    }
-
-    public int getValue() {
-        return ((Integer)field.getValue()).intValue();
+    // gets the integer value from the text field
+    public int getFieldValue() {
+        return ((Integer)this.field.getValue()).intValue();
     }
 }
