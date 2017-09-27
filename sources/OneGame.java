@@ -8,22 +8,26 @@ public class OneGame {
 
     public List<Agent> agents = null;
 
-    // ??????
     public OneGame(int iNumCheaters, int iNumCooperators, int iNumMonkeys, int iNumCopyists, int iNumCoins) {
-        agents = new ArrayList<Agent>();
+        // init the agents list
+        this.agents = new ArrayList<Agent>();
 
+        // add the cheater agents
         for (int i = 0; i < iNumCheaters; ++i) {
             this.agents.add(new CheaterAgent(iNumCoins));
         }
 
+        // add the cooperator agents
         for (int i = 0; i < iNumCooperators; ++i) {
             this.agents.add(new CooperatorAgent(iNumCoins));
         }
 
+        // add the monkey agents
         for (int i = 0; i < iNumMonkeys; ++i) {
             this.agents.add(new MonkeyAgent(iNumCoins));
         }
 
+        // add the copyist agents
         for (int i = 0; i < iNumCopyists; ++i) {
             this.agents.add(new CopyistAgent(iNumCoins));
         }
@@ -83,7 +87,8 @@ public class OneGame {
     // removes agents who have the negative number of coins
     // returns the number of remaining agents
     public int endRound() {
-        for (Agent agent : this.agents) {
+        for (int i = 0; i < this.agents.size(); ++i) {
+            Agent agent = this.agents.get(i);
             if (agent.getCoins() < 0) {
                 this.agents.remove(agent);
             }
