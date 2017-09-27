@@ -29,12 +29,13 @@ OneGame is a game is played by the agents
 ---
 
 I added the imitation strategy for the agents (CopyistAgent). \
-The imitation strategy: at the first step put coin on the stake and next copy the previous step of the opponent. \
-I think the imitation strategy is a more optimal strategy than that proposed three.
+The imitation strategy: at the first step put coin on the stake and next copy the previous step of the opponent.
 
 The random strategy is the most nonoptimal strategy. \
-The naive strategy is a good strategy if you are not alone. \
-The greedy strategy only wins the first rounds. 
+The greedy strategy only wins the first rounds but it may be enough. \
+The naive strategy is a good and more optimal strategy if you are not alone who plays that.
+
+I think the imitation strategy is a more optimal strategy than that proposed three.
 
 The Cooperator Agents and/or the Copyist Agents may play this game endlessly even if there are the few Cheater Agents.
 
